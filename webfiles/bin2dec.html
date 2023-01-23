@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bin to Dec</title>
+</head>
+
+<body>
+    <h1>Bin to Dec</h1>
+
+    <p>Enter the binary number: <input id="bin" type="number" name="bin"></p>
+
+    <input type="button" onclick="convertBin2Dec()" value="Convert">
+
+
+    <h3>Result: </h3>
+    <h3 id="n3"></h3>
+
+    <script>
+        function convertBin2Dec() {
+            var num = document.getElementById("bin").value;
+            var sum = 0;
+            var i = 0;
+            while (num) {
+                sum = sum + Math.pow(2, i) * (num % 10);
+                i++;
+                num = parseInt(num / 10);
+            }
+            n3.innerHTML = (sum);
+        }
+    </script>
+</body>
+
+</html>

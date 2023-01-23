@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dec to Bin</h1>
+    
+    <p>Enter the decimal number: <input id="dec" type="number" value=""></p>
+    <!--   <p>Enter the second number: <input id="n2" type="number" value=""></p> -->
+    
+    <input type="button" onclick="convert()" value="Convert">
+    
+    
+    <h3>Result: </h3> <h3 id="n3"></h3>
+    <script>
+
+       function convert()
+       {
+           var dec = document.getElementById("dec").value;
+           var mod = "";
+           var bin = "";
+           while(dec >=1)
+           {
+              /*  if (dec < 1)
+               {
+                   break;
+               } */
+               mod = dec%2;
+               dec = parseInt(dec/2);
+               bin = mod+bin;
+           
+           }
+           n3.innerHTML=(bin);
+       }
+       
+       </script>
+       </body>
+       </html>
+
+
+ <!--  /*   function toBin(x)
+    { */
+      /*   var x1 = document.getElementById("n1").value
+       while(x1>0)
+       {
+        if(x1%2==1)
+        {
+            binary = "1"+binary;
+        }
+        else
+        {
+            binary = "0"+binary;
+        }
+        x1=Math.floor(n1/2);
+       } */
+/*     }
+ */
+
+  /*       function compare()
+        { */
+/*         for(var i=0; i<20, i=i+5)
+          {
+            document.write('this is row'+ i +'<br/>'');
+          }
+        } --> 
+
+
+
+<!--/* var count = 0;
+while(count < 10) {
+    document.write('Count: ' + count + '<br />');
+    count++;
+}
+
+        } */
+
+/*
+        function product(x,y)
+        {
+            return x*y;
+        }
+        alert(product(10,3));
+    */
+
+
+
+
+function factorial(x)
+{
+    var f=1;
+    for(var i = 1; i<=x; i++)
+    {
+        f = f*i;
+    }
+    return f;
+}
+
+var t = factorial(6);
+alert(t);
+
+/* sum numbers up to n
+sum(4) == 4+3+2+1 == 10 */
+
+/* prime(n) --><!--  true -- 2, 3, 5, 7, 11, 13
+
+
+ */ -->
+ 

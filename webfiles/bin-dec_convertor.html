@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dec to Bin</title>
+</head>
+
+<body>
+    <h1>Dec to Bin</h1>
+
+    <p>Enter the decimal number: <input id="dec" type="number" name="dec"></p>
+
+    <input type="button" onclick="convertDec2Bin()" value="Convert">
+
+
+    <h3>Result: </h3>
+    <h3 id="nBin"></h3>
+    <hr />
+    <script>
+
+        function convertDec2Bin() {
+            var dec = document.getElementById("dec").value;
+            var mod = "";
+            var bin = "";
+            while (dec >= 1) {
+                mod = dec % 2;
+                dec = parseInt(dec / 2);
+                bin = mod + bin;
+            }
+            nBin.innerHTML = (bin);
+        }
+
+    </script>
+
+<h1>Bin to Dec</h1>
+
+<p>Enter the binary number: <input id="bin" type="number" name="bin"></p>
+
+<input type="button" onclick="convertBin2Dec()" value="Convert">
+
+
+<h3>Result: </h3>
+<h3 id="nDec"></h3>
+
+<script>
+    function convertBin2Dec() {
+        var num = document.getElementById("bin").value;
+        var sum = 0;
+        var i = 0;
+        while (num) {
+            sum = sum + Math.pow(2, i) * (num % 10);
+            i++;
+            num = parseInt(num / 10);
+        }
+        nDec.innerHTML = (sum);
+    }
+</script>
+</body>
+
+</html>

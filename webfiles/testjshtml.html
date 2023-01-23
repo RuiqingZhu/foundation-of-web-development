@@ -1,0 +1,92 @@
+<!-- <html>
+    <head>
+        <title>
+            First Web Page
+        </title>
+    </head>
+
+    <body>
+         <p>
+            My first web page.
+        </p>
+
+        <script type="text/javascript">
+            function helloWorld() {
+                alert('Hello World, I am currently in the class of web development');
+            }
+
+        </script> 
+
+
+
+    </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Compare 3 numbers</title>
+    
+</head>
+<body>
+    <center>
+        <p>
+            N1 <input id="n1" type="number" value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            N2 <input id="n2" type="number" value="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            N3 <input id="n3" type="number" value="">
+        </p>
+    </center>
+
+    <center><input type="button" onclick="compare()" value="COMPARE"></center>
+
+    <center><h3> Result:</h3> <h3 id="n4"></h3></center>
+
+    <script>
+        function compare()
+        {
+            var x1 = document.getElementById("n1").value;
+            var x2 = document.getElementById("n2").value;
+            var x3 = document.getElementById("n3").value;
+
+            if(parseInt(x1) > parseInt(x2) && parseInt(x1)> parseInt(x3) && parseInt(x2) > parseInt(x3)) {
+                document.getElementById("n4").innerHTML = x1+">"+x2+","+x1+">"+x3+","+x2+">"+x3;
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!-- <html>
+<h1>Compare the numbers</h1>
+
+<span>N1: <input id="n1" type="text" value="0" /></span>
+<span>N2: <input id="n2" type="text" value="0" /></span>
+<span>N3: <input id="n3" type="text" value="0" /></span>
+<br><br>
+<input type="button" onclick="compare()" value="Compare" id="compare" />
+
+
+<h3 id="result" value=""></h3>
+
+<script>
+function compare()
+{
+var x1 = document.getElementById("n1").value;
+var x2 = document.getElementById("n2").value;
+var x3 = document.getElementById("n3").value;
+
+
+if (parseInt(x1) > parseInt(x2) && parseInt(x1) > parseInt(x3) && parseInt(x2) > parseInt(x3))
+{
+document.getElementById("result").innerHTML = "Value of N1 is greater than N2 and N3";
+}
+}
+</script>
+</body>
+</html>  -->

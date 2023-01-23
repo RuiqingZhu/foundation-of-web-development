@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>zhu1698125_final_exam</title>
+</head>
+
+<body>
+    <h1>Halloween Candy</h1>
+
+    <p>Chocolate boxes: <input id="choco" type="number" name="choco"></p>
+
+    <input type="button" onclick="chococalc()" value="CALCULATE">
+
+
+    <h3>Output: </h3>
+    <h3 id="total"></h3>
+    <h3 id="discount"></h3>
+    <h3 id="afterdiscount"></h3>
+    <hr />
+
+
+
+
+
+    <h1>Hotel Report Analyser</h1>
+
+    <p>Number of vacant rooms: <input id="vacant" type="number" name="vacant"></p>
+    <p>Number of occupied rooms: <input id="occupied" type="number" name="occupied"></p>
+    <p>Number of reserved rooms: <input id="reserved" type="number" name="reserved"></p>
+
+    <input type="button" onclick="rooms()" value="CALCULATE">
+
+    
+    <h3 id="tot"></h3>
+    <h3 id="vac%"></h3>
+    <h3 id="occ%"></h3>
+    <h3 id="res%"></h3>
+    <hr />
+
+
+
+    <h1>Multiple Of 3 Between A Range</h1>
+
+    <p>First number: <input id="n1" type="number" name="n1"></p>
+    <p>Second number: <input id="n2" type="number" name="n2"></p>
+
+    <input type="button" onclick="multi()" value="CALCULATE">
+
+    
+    <h3>Output: </h3> <h3 id="n3"></h3>
+   
+
+
+
+    <script>
+
+        function chococalc(){
+           
+            // no dicount
+            if(document.getElementById("choco").value > 0 && document.getElementById("choco").value < 5) {
+                document.getElementById("total").innerHTML = "Total cost without discount is: $"+(document.getElementById("choco").value * 11.99).toFixed(3);
+                document.getElementById("discount").innerHTML = "No discount";
+            }
+            //10% discount
+            else if(document.getElementById("choco").value >= 5 && document.getElementById("choco").value < 10) {
+                document.getElementById("total").innerHTML = "Total cost without discount is: $"+(document.getElementById("choco").value * 11.99).toFixed(3);
+                document.getElementById("discount").innerHTML = "Discount of 10% is: $"+(document.getElementById("choco").value * 11.99 * 0.1).toFixed(3);
+                document.getElementById("afterdiscount").innerHTML = "Total cost after discount is: $"+(document.getElementById("choco").value * 11.99 * (1-0.1)).toFixed(3);
+            }
+            //25% discount
+            else if(document.getElementById("choco").value >= 10 && document.getElementById("choco").value < 30) {
+                document.getElementById("total").innerHTML = "Total cost without discount is: $"+(document.getElementById("choco").value * 11.99).toFixed(3);
+                document.getElementById("discount").innerHTML = "Discount of 10% is: $"+(document.getElementById("choco").value * 11.99 * 0.25).toFixed(3);
+                document.getElementById("afterdiscount").innerHTML = "Total cost after discount is: $"+(document.getElementById("choco").value * 11.99 * (1-0.25)).toFixed(3);
+            }
+            //40% discount
+            else if(document.getElementById("choco").value >= 30 && document.getElementById("choco").value < 50) {
+                document.getElementById("total").innerHTML = "Total cost without discount is: $"+(document.getElementById("choco").value * 11.99).toFixed(3);
+                document.getElementById("discount").innerHTML = "Discount of 10% is: $"+(document.getElementById("choco").value * 11.99 * 0.4).toFixed(3);
+                document.getElementById("afterdiscount").innerHTML = "Total cost after discount is: $"+(document.getElementById("choco").value * 11.99 * (1-0.4)).toFixed(3);
+            }
+            //50% discount
+            else{
+                document.getElementById("total").innerHTML = "Total cost without discount is: $"+(document.getElementById("choco").value * 11.99).toFixed(3);
+                document.getElementById("discount").innerHTML = "Discount of 10% is: $"+(document.getElementById("choco").value * 11.99 * 0.5).toFixed(3);
+                document.getElementById("afterdiscount").innerHTML = "Total cost after discount is: $"+(document.getElementById("choco").value * 11.99 * (1-0.5)).toFixed(3);
+            }
+
+    }
+    </script>
+
+
+
+    <script>
+
+        function rooms(){
+            let vac = document.getElementById("vacant").value;
+            let occ = document.getElementById("occupied").value;
+            let res = document.getElementById("reserved").value;
+            let tot = parseInt(vac) + parseInt(occ) + parseInt(res);
+
+            document.getElementById("tot").innerHTML = "Total number of rooms is: " + tot;
+            document.getElementById("vac%").innerHTML = "The percentage of vacant rooms is: " + (vac/tot*100).toFixed(1) + "%";
+            document.getElementById("occ%").innerHTML = "The percentage of occupied rooms is: " + (occ/tot*100).toFixed(1) + "%";
+            document.getElementById("res%").innerHTML = "The percentage of reserved rooms is: " + (res/tot*100).toFixed(1) + "%";
+        }
+    </script>
+
+
+    <script>
+        function multi() {
+            if (document.getElementById("n1").value < document.getElementById("n2").value) {
+            for (let i = 1; i < document.getElementById("n2").value; i++) {
+                if (i> document.getElementById("n1").value && i%3==0){
+                
+                document.getElementById("n3").innerHTML += i + "&nbsp&nbsp&nbsp";
+            }
+        }
+            }
+        }
+    </script>
+
+
+    </body>
+    </html>

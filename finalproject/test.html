@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration</h1>
+
+    <form onsubmit ="return validateForm()">  
+  
+        <!-- Enter first name -->  
+        <td> First Name* </td>  
+        <input type = "text" id = "fname" value = "">   
+        <span id = "blankMsg" style="color:red"> </span> <br><br>  
+          
+        <!-- Enter last name -->  
+        <td> Last Name* </td>  
+        <input type = "text" id = "lname" value = "">   
+        <span id = "charMsg" style="color:red"> </span> <br><br>  
+          
+        <!-- Create a new password -->  
+        <td> Create Password* </td>  
+        <input type = "password" id = "pswd1" value = "">   
+        <span id = "message1" style="color:red"> </span> <br><br>  
+          
+        <!?Enter confirm password -->  
+        <td> Confirm Password* </td>  
+        <input type = "password" id = "pswd2" value = "">   
+        <span id = "message2" style="color:red"> </span> <br><br>  
+          
+        <!-- Click to verify valid password -->  
+        <input type = "submit" value = "Submit">  
+          
+        <!-- Click to reset fields -->  
+        <button type = "reset" value = "Reset" >Reset</button>  
+        </form>  
+
+        <script>  
+            function validateForm() {  
+                //collect form data in JavaScript variables  
+                var pw1 = document.getElementById("pswd1").value;  
+                var pw2 = document.getElementById("pswd2").value;  
+                var fname = document.getElementById("fname").value;  
+                var lname = document.getElementById("lname").value;  
+                  
+                //check empty first name field  
+                if(fname == "") {  
+                  document.getElementById("blankMsg").innerHTML = "**Fill in the first name";  
+                  return false;  
+                }  
+                  
+                //character data validation  
+                if(!isNaN(fname)){  
+                  document.getElementById("blankMsg").innerHTML = "**Only characters are allowed";  
+                  return false;  
+                }  
+                
+                //check
+                if(lname == "") {  
+                  document.getElementById("charMsg").innerHTML = "**Fill in the last name";  
+                  return false;  
+                }  
+
+               //character data validation  
+                if(!isNaN(lname)){  
+                  document.getElementById("charMsg").innerHTML = "**Only characters are allowed";  
+                  return false;  
+                }   
+                
+                //check empty password field  
+                if(pw1 == "") {  
+                  document.getElementById("message1").innerHTML = "**Fill the password please!";  
+                  return false;  
+                }  
+                
+                //check empty confirm password field  
+                if(pw2 == "") {  
+                  document.getElementById("message2").innerHTML = "**Enter the password please!";  
+                  return false;  
+                }   
+                 
+                //minimum password length validation  
+                if(pw1.length < 8) {  
+                  document.getElementById("message1").innerHTML = "**Password length must be atleast 8 characters";  
+                  return false;  
+                }  
+              
+                //maximum length of password validation  
+                if(pw1.length > 15) {  
+                  document.getElementById("message1").innerHTML = "**Password length must not exceed 15 characters";  
+                  return false;  
+                }  
+                
+                if(pw1 != pw2) {  
+                  document.getElementById("message2").innerHTML = "**Passwords are not same";  
+                  return false;  
+                } else {  
+                  alert ("Your password created successfully");  
+                }
+                window.location.href="homepage.html";  
+             }  
+            </script>  
+</body>
+</html>
+

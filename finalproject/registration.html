@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JAC Online Shop Home</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <header class= "top-header">
+        <!-- <h1> <img class="header-image" src="Images/logo-1.png">JAC Online Food Bank</h1> -->
+        <h1> JAC Online Food Bank</h1>
+        <nav class="nav top-nav">
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="registration.html">REGISTER</a></li>
+                <li><a href="signin2.html">SIGN IN</a></li>    
+                <li><a href="ContactUs.html">CONTACT US</a></li>
+                <li><a href="whatsnew.html">WHAT'S NEW</a></li>
+            </ul>    
+        </nav>      
+    </header>
+
+
+<body>
+    
+    <div class="news-background">
+        <form class="container content-section-home" onsubmit="return validateForm()" name="form">
+            <h1 class="registration">Registration</h1>
+            <tr>
+                <td class="reg-field-name"> Username</td>
+                <td> <input class="reg-input" type="edit" name="user" id="user" maxlength="50"
+                        placeholder="Between 1 and 20 characters, letters only"></td>
+                <span id="missing-user" style="color:red"> </span> <br><br>
+            </tr>
+
+            <tr>
+                <td><br /></td>
+            </tr>
+
+            <tr>
+                <td class="reg-field-name"> First Name</td>
+                <td> <input class="reg-input" type="edit" name="fname" id="fname" maxlength="50"
+                        placeholder="Between 1 and 20 characters, letters only"></td>
+                <span id="missing-fname" style="color:red"> </span> <br><br>
+            </tr>
+
+            <tr>
+                <td><br /></td>
+            </tr>
+
+            <tr>
+                <td class="reg-field-name"> Last Name</td>
+                <td> <input class="reg-input" type="edit" name="lname" id="lname" maxlength="50"
+                        placeholder="Between 1 and 20 characters, letters only"></td>
+                <span id="missing-lname" style="color:red"> </span> <br><br>
+            </tr>
+
+            <tr>
+                <td><br /></td>
+            </tr>
+
+            <tr>
+                <td class="reg-field-name"> Email Address</td>
+                <td> <input class="reg-input" type="edit" name="email" id="email" maxlength="50"
+                        placeholder="Enter a valid email address"></td>
+                <span id="missing-email" style="color:red"> </span> <br><br>
+            </tr>
+
+            <tr>
+                <td><br /></td>
+            </tr>
+
+            <tr>
+                <td class="reg-field-name"> Set a Password</td>
+                <td> <input class="reg-input" type="Password" name="pass" id="pass" minlength="" maxlength="20"
+                        placeholder="Enter a Password">
+                </td>
+                <span id="missing-pass" style="color:red"> </span>
+            </tr>
+            <tr>
+                <td>
+                    <p class="pass-requirement">letters and numbers only <br />between 8 and 20 characters with at
+                        least: <br />1 lowercase letter <br />1 uppercase letter <br />1 number</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="reg-field-name"> Re-type Password</td>
+                <td> <input class="reg-input" type="Password" name="conf-pass" id="conf-pass" minlength="" maxlength="20"
+                        placeholder="Make sure it matches the password entered above."></td>
+                <span id="missing-conf-pass" style="color:red"> </span> <br><br>
+            </tr>
+            <tr>
+                <td><br /></td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td><input type="Submit" name="Submit" id="submit" value="REGISTER">
+                    <span id="success"> </span> <br><br>
+
+
+                </td>
+
+            </tr>
+
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            let user = document.getElementById("user").value;
+            let fname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("pass").value;
+            let pswd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+            let confpass = document.getElementById("conf-pass").value;
+            let success = document.getElementById("success").value;
+            let invalidEmail = document.getElementById("email").value;
+            let atPosition = invalidEmail.indexOf("@");
+            let dotPosition = invalidEmail.lastIndexOf(".");
+            let secondPass = document.getElementById("conf-pass").value;
+
+            //check empty username
+            if (user == "") {
+                document.getElementById("missing-user").innerHTML = "*** Please enter a username ***";
+                return false;
+            }
+            //check username has only letters
+            else if (!isNaN(user)) {
+                document.getElementById("missing-user").innerHTML = "*** Only letters are accepted ***";
+                return false;
+            }
+            //check empty first name
+            if (fname == "") {
+                document.getElementById("missing-fname").innerHTML = "*** Please enter your first name ***";
+                return false;
+            }
+            //check first name has only letters
+            else if (!isNaN(fname)) {
+                document.getElementById("missing-fname").innerHTML = "*** Only letters are accepted ***";
+                return false;
+            }
+            //check empty last name
+            else if (lname == "") {
+                document.getElementById("missing-lname").innerHTML = "*** Please enter your last name ***";
+                return false;
+            }
+            //check last name has only letters
+            else if (!isNaN(lname)) {
+                document.getElementById("missing-lname").innerHTML = "** Only letters are accepted ***";
+                return false;
+            }
+            //check empty email
+            else if (email == "") {
+                document.getElementById("missing-email").innerHTML = "*** Please enter a valid email address ***";
+                return false;
+            }
+            //check email format
+            else if (atPosition < 1 || dotPosition < atPosition + 2 || dotPosition + 2 >= invalidEmail.length) {
+                document.getElementById("missing-email").innerHTML = "*** Please enter a valid email address ***";
+                return false;
+            }
+            //check empty password
+            else if (pass == "") {
+                document.getElementById("missing-pass").innerHTML = "*** Please set a password ***";
+                return false;
+            }
+            //check password format
+            else if (!pass.match(pswd)) {
+                document.getElementById("missing-pass").innerHTML = "*** Please set a password meeting the requirement ***";
+                return false;
+            }
+            //check password length
+            else if ((pass.length > "0" && pass.length < "8") || pass.length > "20") {
+                document.getElementById("missing-pass").innerHTML = "*** Password must be between 8 and 20 characters long. ***";
+                return false;
+            }
+            //check empty retype password
+            else if (confpass == "") {
+                document.getElementById("missing-conf-pass").innerHTML = "*** Please re-type the password ***";
+                return false;
+            }
+            //check matching password
+            else if (secondPass !== pass) {
+                document.getElementById("missing-conf-pass").innerHTML = "*** Password doesn't match. Please enter again ***"
+                return false;
+            }
+            //Display a confirmation message and go to the Sign In page
+            else {
+                setTimeout(function () { window.location.href = "sign_in_after_reg.html"; })
+            }
+
+        }
+    </script>
+</body>
+
+</html>

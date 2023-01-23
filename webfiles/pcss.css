@@ -1,0 +1,15 @@
+p 
+{
+	text-align: center;
+	/* This is another property*/
+	color: red;
+	font-family: arial;
+}
+
+h3
+{
+	color: blue;
+	font-family: "comic sans ms";
+	text-align: right;
+}
+

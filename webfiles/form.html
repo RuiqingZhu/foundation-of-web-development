@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form>
+		<h3>Username: <input type="text" name="user" id="user" value="" /> </h3><br>
+
+		<h3>Password: <input type="password" name="pass" id="pass" value="" /> </h3><br>
+
+		<h3>Comments: <textarea id="area" name="area" rows="5" cols="30">N/A</textarea> </h3><br>
+	</form>
+
+	<form action="login.html" method="POST">
+		<table border="2">
+			<tr>
+				<td> Username</td>
+				<td> <input type="edit" name="user" id="user" size="50" maxlength="50" value=""></td>
+			</tr>
+
+			<tr>
+				<td> Password</td>
+				<td> <input type="Password" name="pass" id="pass" size="50" maxlength="50" value=""></td>
+			</tr>
+
+			<tr>
+				<td> Date of birth</td>
+				<td> <input type="date" value=""></td>
+			</tr>
+
+			<tr>
+				<td> Submit</td>
+				<td> <input type="Submit" name="Submit" value="SIGN IN"></td>
+			</tr>
+
+			<tr>
+				<td> Term 2022</td>
+				<td> <select name="term" id="term">
+						<option value="1">Winter</option>
+						<option value="2">Summer</option>
+						<option value="3">Fall</option>
+					</select></td>
+			</tr>
+
+			<tr>
+				<td> Gender </td>
+				<td> <input type="radio" name="gender" id="gender" value="Male">Male
+					<input type="radio" name="gender" id="gender" value="Female">Female
+				</td>
+			</tr>
+
+			<tr>
+				<td> Subjects </td>
+				<td> <input type="checkbox" name="subject" id="sub1">Web Dev
+					<input type="checkbox" name="subject" id="sub2">Java Prog
+					<input type="checkbox" name="subject" id="sub3">DBMS
+					<input type="checkbox" name="subject" id="sub4">Foundation of Web Dev
+				</td>
+			</tr>
+
+		</table>
+
+	</form>
+</body>
+</html>
